@@ -5,3 +5,4 @@ sqlalchemy
 pymysql
 influxdb-client
 python-dotenv
+cryptography
