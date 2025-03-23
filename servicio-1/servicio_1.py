@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 
 # Configuración mosquitto
-BROKER = "localhost" 
+BROKER = "mosquitto" 
 PORT = 1883
 TOPIC = "challenge/dispositivo/rx"
 

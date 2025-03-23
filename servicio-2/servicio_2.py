@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 # Configuración MQTT
-BROKER = "localhost"
+BROKER = "mosquitto"
 PORT = 1883
 TOPIC = "challenge/dispositivo/rx"
 
