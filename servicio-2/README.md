@@ -12,7 +12,10 @@ Este servicio escucha mensajes MQTT del tópico `challenge/dispositivo/rx` publi
 
 ---
 
-Fue aplicado un archivo .env para manejar credenciales sensibles (como tokens de InfluxDB). 
+Para facilitar la revisión y testeo del desafío, no se aplicó la carga de credenciales a través de un archivo .env.
+En su lugar, las credenciales sensibles como tokens de InfluxDB y datos de conexión a MySQL se encuentran directamente en el código.
+
+En un entorno productivo o profesional, se recomienda el uso de variables de entorno externas y archivos .env (con soporte de librerías como python-dotenv o directamente gestionadas por el sistema) para proteger información sensible y seguir buenas prácticas de seguridad.
 
 ---
 

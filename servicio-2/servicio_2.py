@@ -10,7 +10,7 @@ TOPIC = "challenge/dispositivo/rx"
 
 # Configuración InfluxDB
 INFLUX_URL = "http://influx:8086"
-INFLUX_TOKEN = "_Gcd7AQSMFyOpbINETVW1DPW7Zi0rQCsX2SMwfX7BctoHJ7der7cm4H1VNAORWN0c4DdkpIPFQJk_ntqvxqsPw=="
+INFLUX_TOKEN = "REEMPLAZAR_CON_TU_TOKEN_REAL"
 INFLUX_ORG = "tecnoandina"
 INFLUX_BUCKET = "system"
 
