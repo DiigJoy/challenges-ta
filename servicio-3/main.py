@@ -7,6 +7,9 @@ from typing import Optional
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
+import time
+
+time.sleep(10)  # Espera de 10 segundos (ajustable)
 
 app = FastAPI()
 
