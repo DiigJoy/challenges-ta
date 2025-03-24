@@ -1,12 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Alert
-from dotenv import load_dotenv
-import os
 import time
 time.sleep(10)  # Espera de 10 segundos (ajustable)
 
-load_dotenv()
 
 DB_USER="admin"
 DB_PASSWORD="admin"

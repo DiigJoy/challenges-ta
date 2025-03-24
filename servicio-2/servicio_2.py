@@ -1,10 +1,7 @@
 import json
 import paho.mqtt.client as mqtt
 from influxdb_client import InfluxDBClient, Point
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
 
 # Configuración MQTT
 BROKER = "mosquitto"
