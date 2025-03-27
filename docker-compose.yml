@@ -54,7 +54,7 @@ services:
       - DOCKER_INFLUXDB_INIT_PASSWORD=12345678
       - DOCKER_INFLUXDB_INIT_ORG=tecnoandina
       - DOCKER_INFLUXDB_INIT_BUCKET=system
-      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=super-secret-token
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=fJzWkx2IhKIVdasCuRzv9p7f-9EL8oa8GO_CuF3JdVtArTRIrn07mzcvwlxMYDYg7AEtnvw4te38fNYSmndkTg==
   
 volumes:
   mysqldata:
