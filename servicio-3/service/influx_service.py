@@ -38,7 +38,6 @@ def get_start_time(time_search: str):
 def get_data_from_influx(version: int, time_search: str):
     try:
         start_time = get_start_time(time_search).isoformat()
-
         query = f'''
         from(bucket: "{INFLUX_BUCKET}")
           |> range(start: {start_time})
@@ -46,9 +45,7 @@ def get_data_from_influx(version: int, time_search: str):
           |> filter(fn: (r) => r["version"] == "{version}")
           |> filter(fn: (r) => r["_field"] == "value")
         '''
-
         result = query_api.query(org=INFLUX_ORG, query=query)
-
         data_points = []
         for table in result:
             for record in table.records:
@@ -73,3 +70,6 @@ def get_data_from_influx(version: int, time_search: str):
                 except Exception as e:
                     print(f"[ERROR] Registro descartado por excepción: {e}")
                     continue
+    except Exception as e:
+        print(f"[ERROR Influx] {e}")
+        return None
