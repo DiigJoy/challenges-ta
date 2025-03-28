@@ -3,7 +3,6 @@ import paho.mqtt.client as mqtt
 from influxdb_client import InfluxDBClient, Point
 from datetime import datetime
 
-timestamp = datetime.strptime(data["time"], "%Y-%m-%d %H:%M:%S").isoformat() + "Z"
 
 
 # Configuración MQTT
@@ -28,11 +27,14 @@ def on_message(client, userdata, msg):
         data = json.loads(msg.payload.decode())
         print(f"[INFO] Mensaje recibido: {data}")
 
+        # 🔥 Este timestamp debe ir aquí, no arriba del archivo
+        timestamp = datetime.strptime(data["time"], "%Y-%m-%d %H:%M:%S").isoformat() + "Z"
+
         point = (
             Point("dispositivos")
             .tag("version", str(data["version"]))
             .field("value", float(data["value"]))
-            .time(data["time"])  # Usa el campo time como timestamp real
+            .time(timestamp) # Usa el campo time como timestamp real
 
         )
 
