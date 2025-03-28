@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 # Configuración InfluxDB
 INFLUX_URL = "http://influx:8086"
-INFLUX_TOKEN = "fJzWkx2IhKIVdasCuRzv9p7f-9EL8oa8GO_CuF3JdVtArTRIrn07mzcvwlxMYDYg7AEtnvw4te38fNYSmndkTg=="
+INFLUX_TOKEN = "AildXuWB88Ue-APuLafSJOi2ORLjtoI6utX6hBMtt8FDxNp5rA70wGIiH600h1NhWCuY6iRXCSlTM0yU_ViABA=="
 INFLUX_ORG = "tecnoandina"
 INFLUX_BUCKET = "system"
 
