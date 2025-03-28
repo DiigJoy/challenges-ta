@@ -18,6 +18,6 @@ Diagrama
 
 ---------------------------
 
-Nota: Debido a que mi equipo actual no soporta virtualización, no pude ejecutar Docker de forma local. Sin embargo, preparé los `Dockerfile` basándome en documentación oficial y ejemplos funcionales.
+Fue agregado un archivo .env para el manejo de credenciales.
 
-Si ejecutás este proyecto en una máquina con Docker y virtualización habilitados, debería correr correctamente.
+El docker-compose fue modificado para usar el .env.

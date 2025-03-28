@@ -16,9 +16,7 @@ query_api = client.query_api()
 
 # Genera el datetime a partir de la string inserida
 def get_start_time(time_search: str):
-    """
-    Convierte un string como '15m', '2h', '3d' en un datetime
-    """
+
     cantidad = int(time_search[:-1]) # Accede a la string menos el último valor (m, h o d)
     unidad = time_search[-1] # Accede al último valor de la string para hacer la conversión correcta.
 

@@ -102,7 +102,7 @@ Lo único que tiene que hacer para simular el envío es actualizar el campo **se
 - 422 `{"status": "No se pudo procesar los párametros"}`
 - 500 `{"status": "Error: {motivo}"}`
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Servicio-3 – API REST para procesamiento de alertas
 
@@ -143,22 +143,6 @@ Fue aplicado un archivo .env para manejar credenciales sensibles (como tokens de
 - [InfluxDB Python Client Docs](https://influxdb-client.readthedocs.io/)
 - [MySQL Reference](https://dev.mysql.com/doc/)
 
-
----
-
-## Reflexión personal
-Este servicio me permitió integrar múltiples tecnologías y aplicar una arquitectura real de procesamiento de datos.
-Comprendí el uso de:
-
-Modelos en SQL y ORM
-
-Lógica de negocio aplicada a datos dinámicos
-
-Consumo cruzado entre Influx y MySQL
-
-Exposición de servicios mediante APIs RESTful
-
-Me apoyé en IA para optimizar ciertas partes del desarrollo, pero cada componente fue comprendido, validado y testeado por mí.
 
 ---
 

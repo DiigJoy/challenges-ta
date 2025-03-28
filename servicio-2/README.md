@@ -4,7 +4,7 @@ Este servicio debe escuchar el tópico `challenge/dispositivo/rx` del servicio m
 Cada mensaje que llegue se debe insertar en el servicio influx, teniendo en consideración que el **time** y **value** son *fields* y **version** es un *tag*.
 Este mensaje se guardará en el bucket **system** en el measurement **dispositivos**.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Servicio-2 – Suscriptor MQTT con escritura en InfluxDB
 
@@ -12,6 +12,9 @@ Este servicio escucha mensajes MQTT del tópico `challenge/dispositivo/rx` publi
 
 ---
 
+Fue aplicado un archivo .env para manejar credenciales sensibles (como tokens de InfluxDB o conexión a MySQL). 
+
+---
 ## ¿Qué hace este servicio?
 - Se suscribe al tópico MQTT `challenge/dispositivo/rx`
 - Por cada mensaje recibido:

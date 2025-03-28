@@ -56,7 +56,7 @@ def process_data(req: ProcessRequest):
                 elif value > 200:
                     alert_type = "BAJA"
                 else:
-                    continue  # no es alerta
+                    continue  
             elif version == 2:
                 if value < 200:
                     alert_type = "ALTA"
@@ -65,7 +65,7 @@ def process_data(req: ProcessRequest):
                 elif value < 800:
                     alert_type = "BAJA"
                 else:
-                    continue  # no es alerta
+                    continue  
             else:
                 continue
 

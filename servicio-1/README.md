@@ -21,7 +21,8 @@ Ejemplo
     "version": 1
 }
 ```
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
+
 # Servicio-1 – Simulación de Dispositivo Publicador MQTT
 
 Este servicio simula un dispositivo electrónico que publica datos cada 60 segundos a un **broker MQTT (Mosquitto)** en el tópico: `challenge/dispositivo/rx`
