@@ -13,6 +13,7 @@ query_api = client.query_api()
 
 # Genera el datetime a partir de la string inserida
 def get_start_time(time_search: str):
+    print(f"[DEBUG] time_search recibido: '{time_search}'")
     if not time_search or len(time_search) < 2:
         raise ValueError("Formato inválido. Ejemplo: '15m', '3h', '2d'")
 
