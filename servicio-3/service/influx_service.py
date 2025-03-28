@@ -1,12 +1,15 @@
 from influxdb_client import InfluxDBClient
 from datetime import datetime, timedelta, timezone
+from dotenv import load_dotenv
+import os
 
+load_dotenv() 
 
 # Configuración InfluxDB
-INFLUX_URL = "http://influx:8086"
-INFLUX_TOKEN = "Qo5ujokcLZKV2q2YhWFWU7XcpD_0dlv0n8w2bIeJ4BcUvzynCPBGGaA_8xeiK5T5KUgApbMUJUHh5o45JtSIjw=="
-INFLUX_ORG = "tecnoandina"
-INFLUX_BUCKET = "system"
+INFLUX_URL = os.getenv("INFLUX_URL")
+INFLUX_TOKEN = os.getenv("INFLUX_TOKEN")
+INFLUX_ORG = os.getenv("INFLUX_ORG")
+INFLUX_BUCKET = os.getenv("INFLUX_BUCKET")
 
 client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
 query_api = client.query_api()

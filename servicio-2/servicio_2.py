@@ -1,7 +1,10 @@
 import json
 import paho.mqtt.client as mqtt
 from influxdb_client import InfluxDBClient, Point
+from dotenv import load_dotenv
+import os
 
+load_dotenv()  
 
 # Configuración MQTT
 BROKER = "mosquitto"
@@ -9,11 +12,10 @@ PORT = 1883
 TOPIC = "challenge/dispositivo/rx"
 
 # Configuración InfluxDB
-INFLUX_URL = "http://influx:8086"
-INFLUX_TOKEN = "Qo5ujokcLZKV2q2YhWFWU7XcpD_0dlv0n8w2bIeJ4BcUvzynCPBGGaA_8xeiK5T5KUgApbMUJUHh5o45JtSIjw=="
-INFLUX_ORG = "tecnoandina"
-INFLUX_BUCKET = "system"
-
+INFLUX_URL = os.getenv("INFLUX_URL")
+INFLUX_TOKEN = os.getenv("INFLUX_TOKEN")
+INFLUX_ORG = os.getenv("INFLUX_ORG")
+INFLUX_BUCKET = os.getenv("INFLUX_BUCKET")
 
 # Inicializar InfluxDB client
 influx_client = InfluxDBClient(url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
@@ -28,7 +30,7 @@ def on_message(client, userdata, msg):
         point = (
             Point("dispositivos")
             .tag("version", str(data["version"]))
-            .field("time", data["time"])  # string, solo para visualizar
+            .field("time", data["time"])  
             .field("value", float(data["value"]))
         )
 

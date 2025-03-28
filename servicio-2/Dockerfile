@@ -6,6 +6,7 @@ WORKDIR /app
 
 COPY servicio_2.py .
 COPY requirements.txt .
+COPY .env .env
 
 RUN pip install --no-cache-dir -r requirements.txt
 

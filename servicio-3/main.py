@@ -9,7 +9,6 @@ from fastapi.responses import FileResponse
 import os
 import time
 
-time.sleep(10)  # Espera de 10 segundos (ajustable)
 
 app = FastAPI()
 

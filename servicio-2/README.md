@@ -12,13 +12,6 @@ Este servicio escucha mensajes MQTT del tópico `challenge/dispositivo/rx` publi
 
 ---
 
-Para facilitar la revisión y testeo del desafío, no se aplicó la carga de credenciales a través de un archivo .env.
-En su lugar, las credenciales sensibles como tokens de InfluxDB y datos de conexión a MySQL se encuentran directamente en el código.
-
-En un entorno productivo o profesional, se recomienda el uso de variables de entorno externas y archivos .env (con soporte de librerías como python-dotenv o directamente gestionadas por el sistema) para proteger información sensible y seguir buenas prácticas de seguridad.
-
----
-
 ## ¿Qué hace este servicio?
 - Se suscribe al tópico MQTT `challenge/dispositivo/rx`
 - Por cada mensaje recibido:
@@ -52,17 +45,6 @@ En un entorno productivo o profesional, se recomienda el uso de variables de ent
 
 ---
 
-## Reflexión personal
-Este servicio me permitió reforzar el uso del patrón **pub/sub**, y aplicar la escritura de datos estructurados en una base de series temporales.
-
-Pude entender:
-- Cómo funciona `on_message()` para capturar mensajes en tiempo real
-- La estructura de Influx (bucket, measurement, fields, tags)
-- Cómo transformar un mensaje JSON en un punto válido para InfluxDB
-
-Todo el flujo fue validado y comprendido en profundidad. Estoy en condiciones de extender este servicio o adaptarlo a otros escenarios similares.
-
----
 
 ## Cómo ejecutar este servicio
 
@@ -79,8 +61,6 @@ python servicio_2.py
 
 ---
 
-## Comentarios
-- El token decidi dejarlo en blanco ya que es único por computador.
 
 
 ## Screenshoot

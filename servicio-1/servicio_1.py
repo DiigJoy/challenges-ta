@@ -9,7 +9,6 @@ BROKER = "mosquitto"
 PORT = 1883
 TOPIC = "challenge/dispositivo/rx"
 
-# Callback para conexión exitosa https://eclipse.dev/paho/files/paho.mqtt.python/html/index.html
 def on_connect(client, userdata, flags, reason_code, properties=None):
     print(f"[INFO] Conectado al broker MQTT con código: {reason_code}")
 
@@ -19,9 +18,8 @@ client.on_connect = on_connect
 
 # Conectar al broker
 client.connect(BROKER, PORT, 60)
-client.loop_start()  # Use loop_start en lugar de loop_forever para poder continuar con el flujo del programa
+client.loop_start()  
 
-# Publicar un mensaje cada 60 segundos
 while True:
     payload = {
         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

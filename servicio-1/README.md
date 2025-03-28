@@ -40,10 +40,6 @@ Este servicio simula un dispositivo electrónico que publica datos cada 60 segun
 ## Apoyo de Inteligencia Artificial (ChatGPT)
 -Lo puede acceder en el archivo uso_IA.md
 
-## Reflexión personal
--Aunque me apoyé en IA para acelerar el desarrollo, todo el flujo fue entendido, validado y probado por mí.
--Sé cómo modificarlo, reutilizarlo y explicarlo en detalle. Considero que el uso responsable de herramientas modernas es parte del rol profesional actual.
-
 ## Cómo ejecutar este servicio
 -python servicio_1.py
 
