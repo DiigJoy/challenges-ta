@@ -13,11 +13,16 @@ query_api = client.query_api()
 
 # Genera el datetime a partir de la string inserida
 def get_start_time(time_search: str):
-    """
-    Convierte un string como '15m', '2h', '3d' en un datetime
-    """
-    cantidad = int(time_search[:-1]) # Accede a la string menos el último valor (m, h o d)
-    unidad = time_search[-1] # Accede al último valor de la string para hacer la conversión correcta.
+    if not time_search or len(time_search) < 2:
+        raise ValueError("Formato inválido. Ejemplo: '15m', '3h', '2d'")
+
+    cantidad = time_search[:-1]
+    unidad = time_search[-1]
+
+    if not cantidad.isdigit():
+        raise ValueError("La cantidad debe ser numérica")
+
+    cantidad = int(cantidad)
 
     if unidad == 'm':
         delta = timedelta(minutes=cantidad)
@@ -47,14 +52,24 @@ def get_data_from_influx(version: int, time_search: str):
         data_points = []
         for table in result:
             for record in table.records:
-                data_points.append({
-                    "datetime": record.get_time(),
-                    "value": record.get_value(),
-                    "version": int(record.values["version"])
-                })
+                try:
+                    version_val = record.values.get("version")
+                    value_val = record.get_value()
 
-        return data_points
+                    if not version_val or not str(version_val).isdigit():
+                        print(f"[WARN] Valor de 'version' inválido: {version_val}")
+                        continue
 
-    except Exception as e:
-        print(f"[ERROR Influx] {e}")
-        return None
+                    if value_val is None or value_val == '':
+                        print(f"[WARN] Valor de 'value' vacío: {value_val}")
+                        continue
+
+                    data_points.append({
+                        "datetime": record.get_time(),
+                        "value": float(value_val),
+                        "version": int(version_val)
+                    })
+
+                except Exception as e:
+                    print(f"[ERROR] Registro descartado por excepción: {e}")
+                    continue

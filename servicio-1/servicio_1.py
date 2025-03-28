@@ -24,7 +24,7 @@ client.loop_start()  # Use loop_start en lugar de loop_forever para poder contin
 # Publicar un mensaje cada 60 segundos
 while True:
     payload = {
-        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "time": datetime.utcnow().isoformat() + "Z",
         "value": round(random.uniform(0, 1000), 2),
         "version": random.choice([1, 2])
     }
