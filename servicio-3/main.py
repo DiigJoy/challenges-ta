@@ -41,6 +41,7 @@ def read_index():
 def process_data(req: ProcessRequest):
     try:
         data = get_data_from_influx(req.version, req.timeSearch)
+
         if data is None:
             raise HTTPException(status_code=422, detail="No se pudo procesar los parámetros")
 
