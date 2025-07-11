@@ -17,7 +17,3 @@ Diagrama
 
 
 ---------------------------
-
-Fue agregado un archivo .env para el manejo de credenciales.
-
-El docker-compose fue modificado para usar el .env.
